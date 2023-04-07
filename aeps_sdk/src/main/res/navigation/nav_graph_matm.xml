@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_matm"
+    app:startDestination="@id/posServiceFragment">
+
+    <fragment
+        android:id="@+id/posServiceFragment"
+        android:name="com.example.aeps_sdk.matm.PosServiceFragment"
+        android:label="fragment_pos_service"
+        tools:layout="@layout/fragment_pos_service" >
+        <action
+            android:id="@+id/action_posServiceFragment_to_errorFragment"
+            app:destination="@id/errorFragment" />
+        <action
+            android:id="@+id/action_posServiceFragment_to_error2Fragment"
+            app:destination="@id/error2Fragment" />
+        <action
+            android:id="@+id/action_posServiceFragment_to_transactionStatusFragment"
+            app:destination="@id/transactionStatusFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/errorFragment"
+        android:name="com.example.aeps_sdk.error.ErrorFragment"
+        android:label="fragment_error"
+        tools:layout="@layout/fragment_error" />
+    <fragment
+        android:id="@+id/error2Fragment"
+        android:name="com.example.aeps_sdk.error.Error2Fragment"
+        android:label="fragment_error2"
+        tools:layout="@layout/fragment_error2" />
+    <fragment
+        android:id="@+id/transactionStatusFragment"
+        android:name="com.example.aeps_sdk.matm.TransactionStatusFragment"
+        android:label="fragment_transaction_status"
+        tools:layout="@layout/fragment_transaction_status" >
+        <action
+            android:id="@+id/action_transactionStatusFragment_to_previewPDFFragment2"
+            app:destination="@id/previewPDFFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/previewPDFFragment2"
+        android:name="com.example.aeps_sdk.PreviewPDFFragment"
+        android:label="fragment_preview_p_d_f"
+        tools:layout="@layout/fragment_preview_p_d_f" />
+</navigation>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:ignore="SpeakableTextPresentCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:text="Select"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RadioGroup
+            android:id="@+id/rg_trans_type"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/textView">
+
+            <RadioButton
+                android:id="@+id/rb_cw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="CASH" />
+
+            <RadioButton
+                android:id="@+id/rb_be"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Balance" />
+
+            <RadioButton
+                android:id="@+id/rb_mini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Mini Statement"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/rb_adhaarpay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="AadhaarPay"
+                android:visibility="visible" />
+
+            <RadioButton
+                android:id="@+id/rb_pos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="POS"
+                android:visibility="visible" />
+
+        </RadioGroup>
+
+        <EditText
+            android:id="@+id/et_amount"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:gravity="left"
+            android:hint="Amount"
+            android:inputType="number"
+            android:padding="2dp"
+            app:layout_constraintEnd_toEndOf="@+id/rg_trans_type"
+            app:layout_constraintStart_toStartOf="@+id/rg_trans_type"
+            app:layout_constraintTop_toBottomOf="@+id/rg_trans_type" />
+
+        <EditText
+            android:id="@+id/et_mobileNumber"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:gravity="left"
+            android:hint="Mobile No."
+            android:inputType="number"
+            android:padding="2dp"
+            android:singleLine="true"
+            app:layout_constraintEnd_toEndOf="@+id/et_amount"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/et_amount"
+            app:layout_constraintTop_toBottomOf="@+id/et_amount" />
+
+
+        <Button
+            android:id="@+id/btn_aeps"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="16dp"
+            android:text="AEPS"
+            app:layout_constraintEnd_toEndOf="@+id/et_mobileNumber"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/et_mobileNumber"
+            app:layout_constraintTop_toBottomOf="@+id/skipReceiptCB" />
+
+        <CheckBox
+            android:id="@+id/skipReceiptCB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SkipReceipt"
+            app:layout_constraintStart_toStartOf="@+id/et_mobileNumber"
+            app:layout_constraintTop_toBottomOf="@+id/et_mobileNumber" />
+
+        <Button
+            android:id="@+id/btnMatm"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="8dp"
+            android:text="MATM"
+            app:layout_constraintEnd_toEndOf="@+id/btn_aeps"
+            app:layout_constraintStart_toStartOf="@+id/btn_aeps"
+            app:layout_constraintTop_toBottomOf="@+id/btn_aeps" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

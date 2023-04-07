@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".unifiedaeps.UnifiedAepsFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/conlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvTxnType"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shadow_button_layer_list"
+                android:drawableLeft="@drawable/ic_atm_blue"
+                android:gravity="center"
+                android:padding="53dp"
+                android:text="Cash Withdrawal"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:typeface="monospace"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/aadhaar"
+                android:layout_width="65dp"
+
+                android:layout_marginTop="10dp"
+                android:layout_height="65dp"
+                android:src="@drawable/ic_fingerprint_grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.164"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTxnType" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/aadharText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Aadhaar"
+                android:layout_margin="6dp"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/aadhaar"
+                app:layout_constraintStart_toStartOf="@+id/aadhaar"
+                app:layout_constraintTop_toBottomOf="@+id/aadhaar" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/virtualID"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:src="@drawable/ic_language"
+                app:layout_constraintBottom_toBottomOf="@+id/aadhaar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.85"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/aadhaar" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/virtualidText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="6dp"
+                android:text="Virtual ID"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="@+id/virtualID"
+                app:layout_constraintStart_toStartOf="@+id/virtualID"
+                app:layout_constraintTop_toBottomOf="@id/virtualID" />
+
+            <com.google.android.material.circularreveal.CircularRevealLinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="29dp"
+                android:layout_marginTop="27dp"
+                android:layout_marginRight="29dp"
+                android:layout_marginBottom="20dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/aadharText"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/aadharNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/aadharSelection"
+                    android:digits="0123456789"
+                    android:drawableLeft="@drawable/ic_fingerprint_blue"
+                    android:drawablePadding="11dp"
+                    android:hint="Aadhaar Number"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="14"
+                    android:padding="15dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:typeface="monospace"
+                    android:visibility="visible" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/aadharVirtualID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/aadharSelection"
+                    android:backgroundTint="#4CB5AB"
+                    android:digits="0123456789"
+                    android:drawableLeft="@drawable/ic_fingerprint_blue"
+                    android:drawablePadding="11dp"
+                    android:hint="Aadhar VirtualID"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:maxLength="19"
+                    android:padding="15dp"
+                    android:textColor="@android:color/black"
+                    android:textSize="15sp"
+                    android:typeface="monospace"
+                    android:visibility="gone" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/mobileNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/aadharNumber"
+                    android:layout_marginTop="7dp"
+                    android:digits="0123456789"
+                    android:drawableLeft="@drawable/ic_phone_blue"
+                    android:drawablePadding="11dp"
+                    android:hint=" Mobile Number "
+                    android:imeOptions="actionNext"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:padding="20dp"
+                    android:textSize="15sp"
+                    android:typeface="monospace"
+                    android:visibility="visible" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/bankspinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mobileNumber"
+                    android:layout_marginTop="7dp"
+                    android:clickable="true"
+                    android:drawableLeft="@drawable/ic_bank"
+                    android:drawablePadding="11dp"
+                    android:drawableTint="?attr/colorPrimary"
+                    android:editable="false"
+                    android:focusable="false"
+                    android:hint=" Select Bank"
+                    android:imeOptions="actionNext"
+                    android:padding="20dp"
+                    android:textSize="15sp"
+                    android:typeface="monospace"
+                    android:visibility="visible" />
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/amountEnter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bankspinner"
+                    android:layout_marginTop="7dp"
+                    android:backgroundTint="?attr/colorPrimary"
+                    android:drawableLeft="@drawable/ic_rupee"
+                    android:drawablePadding="11dp"
+                    android:hint=" Enter Amount"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:padding="15dp"
+                    android:textSize="15sp"
+                    android:typeface="monospace"
+                    android:visibility="visible" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/fingerprint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/amountEnter"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:clickable="false"
+                    android:enabled="false"
+                    android:src="@drawable/ic_scanner_grey"
+                    android:visibility="visible" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/fingerprintStrengthDeposit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/fingerprint"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="20dp"
+                    android:text="Fingerprint Strength"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:visibility="gone" />
+
+                <com.moos.library.HorizontalProgressView
+                    android:id="@+id/depositBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_below="@id/fingerprintStrengthDeposit"
+                    android:visibility="gone"
+                    app:corner_radius="18dp"
+                    app:isTracked="true"
+                    app:progressTextColor="@color/black"
+                    app:progressTextVisibility="true"
+                    app:trackColor="#f4f4f4"
+                    app:track_width="18dp" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/depositNote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/depositBar"
+                    android:layout_marginTop="3dp"
+                    android:padding="10dp"
+                    android:text="Note : Recommended Fingerprint Strength is 40%"
+                    android:textColor="@color/black"
+                    android:textSize="12sp"
+                    android:visibility="gone" />
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/terms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="18dp"
+                    android:clickable="true"
+                    android:text="@string/terms_Conditions"
+                    android:textColor="@color/red"
+                    android:textSize="18dp"
+                    android:visibility="gone" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/submitButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="7dp"
+                    android:background="@drawable/button_submit"
+                    android:enabled="false"
+                    android:stateListAnimator="@null"
+                    android:text="Submit"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:typeface="monospace" />
+
+
+            </com.google.android.material.circularreveal.CircularRevealLinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

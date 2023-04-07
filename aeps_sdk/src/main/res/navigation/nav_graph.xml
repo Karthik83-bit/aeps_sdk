@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/unifiedBioAuthFragment">
+    <fragment
+        android:id="@+id/unifiedBioAuthFragment"
+        android:name="com.example.aeps_sdk.unifiedaeps.UnifiedBioAuthFragment"
+        android:label="fragment_unified_bio_auth"
+        tools:layout="@layout/fragment_unified_bio_auth" >
+        <action
+            android:id="@+id/action_unifiedBioAuthFragment_to_unifiedAepsFragment"
+            app:destination="@id/unifiedAepsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/unifiedAepsFragment"
+        android:name="com.example.aeps_sdk.unifiedaeps.UnifiedAepsFragment"
+        android:label="fragment_unified_aeps"
+        tools:layout="@layout/fragment_unified_aeps" >
+        <action
+            android:id="@+id/action_unifiedAepsFragment_to_bankSpinnerFragment"
+            app:destination="@id/bankSpinnerFragment" />
+        <action
+            android:id="@+id/action_unifiedAepsFragment_to_unifiedAepsTransactionStatusFragment"
+            app:destination="@id/unifiedAepsTransactionStatusFragment" />
+        <action
+            android:id="@+id/action_unifiedAepsFragment_to_unifiedAepsMiniStatementFragment"
+            app:destination="@id/unifiedAepsMiniStatementFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bankSpinnerFragment"
+        android:name="com.example.aeps_sdk.unifiedaeps.bankspinner.BankSpinnerFragment"
+        android:label="fragment_bank_spinner"
+        tools:layout="@layout/fragment_bank_spinner" />
+    <fragment
+        android:id="@+id/unifiedAepsTransactionStatusFragment"
+        android:name="com.example.aeps_sdk.unifiedaeps.UnifiedAepsTransactionStatusFragment"
+        android:label="fragment_unified_aeps_transaction_status"
+        tools:layout="@layout/fragment_unified_aeps_transaction_status" >
+        <action
+            android:id="@+id/action_unifiedAepsTransactionStatusFragment_to_unifiedAepsFragment"
+            app:destination="@id/unifiedAepsFragment" />
+        <action
+            android:id="@+id/action_unifiedAepsTransactionStatusFragment_to_previewPDFFragment"
+            app:destination="@id/previewPDFFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/unifiedAepsMiniStatementFragment"
+        android:name="com.example.aeps_sdk.unifiedaeps.UnifiedAepsMiniStatementFragment"
+        android:label="fragment_unified_aeps_mini_statement"
+        tools:layout="@layout/fragment_unified_aeps_mini_statement" />
+    <fragment
+        android:id="@+id/previewPDFFragment"
+        android:name="com.example.aeps_sdk.PreviewPDFFragment"
+        android:label="fragment_preview_p_d_f"
+        tools:layout="@layout/fragment_preview_p_d_f" />
+</navigation>
